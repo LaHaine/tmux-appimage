@@ -1,7 +1,7 @@
-FROM ubuntu:16.04 as builder
+FROM ubuntu:22.04 as builder
 ## docker build . -t tmux --build-arg TMUX_RELEASE_TAG=3.2a
 RUN apt-get update && apt-get install -y \
-            pkg-config automake autoconf libtool libssl-dev bison byacc \
+            pkg-config automake autoconf make libtool libssl-dev bison byacc \
             curl imagemagick git vim
 
 ## linuxdeploy appimage must use --appimage-extract within a docker container.
